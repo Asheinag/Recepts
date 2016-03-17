@@ -1,4 +1,7 @@
 {% extends "main/base.html" %}
 {% block body %}
   {{ recept.name }}
+  {% for item in recept.inlist_set.all %}
+    <p> {{ item.ving.new_name }}</p>
+  {% endfor %}
 {% endblock %}

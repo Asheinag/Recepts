@@ -21,6 +21,9 @@ class VariationIng(models.Model):
     ing = models.ForeignKey(Ingredient)
     new_name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.new_name
+
 
 class InList(models.Model):
     recept = models.ForeignKey(Recept)
