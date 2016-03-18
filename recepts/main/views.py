@@ -8,6 +8,7 @@ from .models import Recept, Ingredient, InList, VariationIng
 
 # Create your views here.
 
+
 class IndexView(generic.ListView):
     template_name = 'main/index.html'
     context_object_name = 'recepts'

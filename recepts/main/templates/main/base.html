@@ -7,7 +7,7 @@
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device_width, initial-scale=1, maximum-scale=1" />
 
-    <link rel="stylesheet" href="{% static 'main/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 
     <title>
@@ -15,7 +15,7 @@
       {% endblock %}
     </title>
   </head>
-  <body>
+  <body ng-app="instantSearch" ng-controller="InstantSearchController">
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -32,8 +32,7 @@
             <li class="active"><a href="{% url 'main:index'%}">Главная</a></li>
           </ul>
           <form class="navbar-form navbar-right">
-            <input type="text" placeholder="Рецепт..." class="form-control">
-            <button type="submit" class="btn btn-success">Искать</button>
+            <input type="text" ng-model="searchString" placeholder="Поиск...." class="form-control">
           </form>
         </div><!--/.nav-collapse -->
       </div>
@@ -43,8 +42,9 @@
       {% endblock %}
     </div>
 
-    <script src="{% static 'main/js/jquery-2.1.4.min.js' %}"></script>
-    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="{% static 'main/js/source.js' %}"></script>
   </body>
 </html>

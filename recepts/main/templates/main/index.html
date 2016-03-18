@@ -1,17 +1,20 @@
 {% extends "main/base.html" %}
 {% block body %}
-  <div class="row">
-    {% for recept in recepts %}
-      <div class="col-xs-12 well">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">{{ recept.name }}</h2>
-          <p>Бла-бла-бла вкусно, бла-бла-бла не оторвать. бла-бла-бла пальчики оближешь бла-бла-бла </p>
-          <p><a class="btn btn-default" href="{% url 'main:recept' recept.id %}" role="button"> К рецепту &raquo;</a></p>
+  {% verbatim %}
+    <div class="row">
+
+        <div class="col-xs-12 well" ng-repeat="i in items | searchFor:searchString">
+          <div class="col-md-7">
+  		          <h2 class="featurette-heading">{{ i.name }}</h2>
+  		          <p>{{i.title}} </p>
+  		          <p><a class="btn btn-success" href="{{i.url}}" role="button"> К рецепту &raquo;</a></p>
+  		        </div>
+  		        <div class="col-md-5">
+  		          <img class="featurette-image img-responsive center-block" ng-src="{{i.image}}" alt="Здесь могла быть ваша реклама ;)">
+  		        </div>
+  		      </div>
         </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/200x200/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-    {% endfor %}
-  </div>
+
+    </div>
+  {% endverbatim %}
 {% endblock %}

@@ -1,4 +1,9 @@
 body {
-  background-color: #ddd;
-  padding-top: 70px; 
+  background-image: url('http://img15.nnm.me/8/2/4/d/8/755dee9230f8c4e11fec1d75f6a.jpg');
+  padding-top: 70px;
+  background-attachment:fixed;
+}
+
+p {
+  text-align: justify;
 }
